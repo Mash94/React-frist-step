@@ -25,10 +25,10 @@ class App extends Component{
         const {characters} = this.state
         return(
             <div className='container'>
-                // Le pasa por props los objetos y una función
+                {/*Le pasa por props los objetos y una función*/}
                 <Table characterData={characters} removeCharacter={this.removeCharacter} />
-                // Le pasa por props a Form el handler Submit para que algo 
-                // dentro de Form la use e internamente pueda modificar el State de App
+                {/*Le pasa por props a Form el handler Submit para que algo*/}
+                {/*-- dentro de Form la use e internamente pueda modificar el State de App*/}
                 <Form  handleSubmit={this.handleSubmit}/>
             </div> 
         )
