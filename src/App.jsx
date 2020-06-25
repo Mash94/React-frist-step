@@ -3,12 +3,10 @@ import './index.css'
 import Table from './Table'
 import Form from './Form'
 
+const vectorObjt = []
 class App extends Component{
     state = {                           // State de App pueden ser modificadas unicamente por App
-        characters : [
-            {name: 'Nico', job: 'Profe'},
-            {name: 'Luli', job: 'PSP'}
-        ]
+        characters : []
     }
     removeCharacter = (index) => {      // Elimina un elemento al State de App
         const {characters} = this.state
@@ -17,9 +15,13 @@ class App extends Component{
                 return i !== index
             })
         })
+        vectorObjt.splice(index,1)
+        console.log(vectorObjt)
     }
     handleSubmit = (character) => {     // Agrega un elemento al State de App
         this.setState({ characters:[...this.state.characters, character]})
+        vectorObjt.push(character)
+        console.log(vectorObjt)
     }
     render(){
         const {characters} = this.state
